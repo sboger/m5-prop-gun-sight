@@ -7,6 +7,7 @@ Arduino for the M5 Core Display.
 Esp-idf for the M5-Camera module.
 
 TO-DO
+* build instructions for both Arduino and esp-idf.
 * cross-hairs
 * various displays (like wifi-scanning superimposed over image to look futuristic)
 * button functions for brightness, etc.
