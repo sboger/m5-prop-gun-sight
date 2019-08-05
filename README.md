@@ -12,6 +12,6 @@ TO-DO
 * various displays (like wifi-scanning superimposed over image to look futuristic)
 * button functions for brightness, etc.
 
-
+![image](m5-gun-sight.gif)
 ![image](m5-prop-gun-sight.jpg)
 ![image](full-m5core-display.jpg)
