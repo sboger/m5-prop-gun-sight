@@ -39,6 +39,8 @@ void setup() {
   delay(500);
   
   M5.begin(true, false, true);
+  M5.Lcd.fillScreen(TFT_BLACK);
+  M5.Lcd.setBrightness(255);
   uart_init();
   jpeg_data_1.buf = (uint8_t *) malloc(sizeof(uint8_t) * 1024 * 37);
   if(jpeg_data_1.buf == NULL) {
@@ -51,13 +53,24 @@ void setup() {
   }
 
   xTaskCreatePinnedToCore(uart_msg_task, "uart_task", 3 * 1024, NULL, 1, NULL, 0);
+
+
 }
 
 void loop() {
     uint32_t data_len = 0;
     uint8_t rx_buffer[21] = { '\0' };
-  
+
+    //Ugly hack. maybe I can draw the lines in the buffer first. need more research
+    M5.Lcd.drawLine(159, 15, 159, 224,TFT_RED);
+    M5.Lcd.drawLine(1, 119, 318, 119,TFT_RED);
+    for (int i=9; i<310; i+=10)
+      M5.Lcd.drawLine(i, 117, i, 121,TFT_RED);
+    for (int i=19; i<220; i+=10)
+      M5.Lcd.drawLine(157, i, 161, i,TFT_RED);
+    
     delay(1);
+    
     if(jpeg_data_1.idle == 1) {
       jpeg_data_1.idle = 2;
       M5.lcd.drawJpg(jpeg_data_1.buf, jpeg_data_1.length, 0, 0);
@@ -70,6 +83,11 @@ void loop() {
       M5.lcd.drawJpg(jpeg_data_2.buf, jpeg_data_2.length, 0, 0);
       memset(jpeg_data_2.buf,0,jpeg_data_1.length);
       jpeg_data_2.idle = 0;
+    }
+
+    M5.update();
+    if(M5.BtnA.wasPressed() || M5.BtnB.wasPressed() || M5.BtnC.wasPressed()) {
+      M5.Lcd.fillScreen(BLACK);
     }
 
 }
