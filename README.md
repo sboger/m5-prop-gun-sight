@@ -8,9 +8,11 @@ Esp-idf for the M5-Camera module.
 
 TO-DO
 * build instructions for both Arduino and esp-idf.
-* cross-hairs
+* cross-hairs (added, but a hack for now)
 * various displays (like wifi-scanning superimposed over image to look futuristic)
 * button functions for brightness, etc.
+* improve smoothness of display.
+* dance like no one is watching.
 
 ![image](m5-gun-sight.gif)
 ![image](m5-prop-gun-sight.jpg)
