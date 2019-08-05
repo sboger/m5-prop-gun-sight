@@ -9,7 +9,7 @@ Esp-idf for the M5-Camera module.
 TO-DO
 * cross-hairs
 * various displays (like wifi-scanning superimposed over image to look futuristic)
-* button functions for bbrightness, etc.
+* button functions for brightness, etc.
 
 
 ![image](m5-prop-gun-sight.jpg)
