@@ -1,3 +1,5 @@
+# OLD VERSION!!! SEE https://github.com/sboger/nextgen-ai-prop-gun-sight for the Next Gen version!
+
 # m5-prop-gun-sight
 Prop Gun Sight using M5 Core and M5-Camera-X or M5-Camera-F. Based originally on the M5Stack UART example, but is full-screen and has prop graphics. M5-Camera steaming over grove connector to M5-Core. M5-Camera powered by M5-Core.
 
